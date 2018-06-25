@@ -77,3 +77,22 @@ target_link_libraries(obstacle_visualizer
 )
 
 add_dependencies(straf_recovery ${PROJECT_NAME}_gencfg)
+
+
+#############
+## Install ##
+#############
+
+install(TARGETS obstacle_finder obstacle_visualizer straf_recovery
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+install(FILES straf_recovery_plugin.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
